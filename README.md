@@ -8,5 +8,5 @@ Estare subiendo ejercicios basicos de este lenguaje.
 * Informacion sobre indicadores 
 * Estrategias para uso de indicadores 
 * Ejercicios de Plotting
-* Ejercucicios de alertamient
+* Ejercucicios de alertamiento
 * Algunos codigos para conexion con third parties

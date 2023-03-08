@@ -14,8 +14,9 @@ cd darkgoshmx@gmail.com\ -\ Google\ Drive
 cd Mi\ unidad
 cd Projectos\ de\ Software
 cd PROYECTOS
+cd Curso_PineScript
 cd Pine\ Scripts
 cd MasteryOfPineScript
 cd BRANCH_MAC_M1/
-cd MasteryOfPineScript 
+
 

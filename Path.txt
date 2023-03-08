@@ -5,6 +5,8 @@ cd PROYECTOS/
 cd Curso_PineScript/
 cd Pine\ Scripts/
 cd MasteryOfPineScript/
+cd PC_WINDOWS/
+ls
 
 
 
@@ -18,6 +20,5 @@ cd Curso_PineScript
 cd Pine\ Scripts
 cd MasteryOfPineScript
 cd BRANCH_MAC_M1/
-ls
 
 

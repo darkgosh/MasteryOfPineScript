@@ -10,7 +10,6 @@ git branch -M main
 git remote add origin git@github.com:darkgosh/MasteryOfPineScript.git
 git push -u origin main
 
-MasteryOfPineScript
 
 git status
 git commit -m "Primer Comit para la carpeta Main de la PC Windows"

@@ -17,4 +17,5 @@ cd PROYECTOS
 cd Pine\ Scripts
 cd MasteryOfPineScript
 cd BRANCH_MAC_M1/
+cd MasteryOfPineScript 
 

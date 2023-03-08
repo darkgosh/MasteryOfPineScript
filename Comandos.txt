@@ -1,0 +1,137 @@
+
+renat@Darkgosh-Lap MINGW64 /g/My Drive/Projectos de Software/PROYECTOS/Curso_git/PC_WINDOWS (main)
+$ history
+ 
+#Crear un Repositorio local 
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:darkgosh/MasteryOfPineScript.git
+git push -u origin main
+
+MasteryOfPineScript
+
+git status
+git commit -m "Primer Comit para la carpeta Main de la PC Windows"
+git log
+git show
+git config --global user.name "Renato DarkGoshLap"
+git config --global user.email "darkgoshmx@gmail.com"
+git config -l
+
+#Crear Repositorio local por medio del repositorio remoto.
+git remote add origin git@github.com:darkgosh/MasteryOfPineScript.git
+git branch -M main
+git push -u origin main
+
+
+git add .
+git add archivo.txt
+git commit -m "Actualiacion de carpeta de Git y baja de archivos duplicados"
+git commit -am "Agregue cambios que hice por error en master a cabecera"
+git checkout cabecera
+git checkout master
+git merge cabecera
+git switch -
+git checkout 4e1de1a7f35a15e0e7849265a87d783b97f67c7e
+git remote add origin https://github.com/darkgosh/Curso_GIT.git
+git remote
+git remote -v
+git push origin master
+git pull origin master --allow-unrelated-histories
+git pull origin master
+
+clear
+history
+
+renat@Darkgosh-Lap MINGW64 /g/My Drive/Projectos de Software/PROYECTOS/Curso_git/PC_WINDOWS (main)
+
+Generar una nueva llave SSH: (Cualquier sistema operativo)
+
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+
+Comprobar proceso y agregarlo (Windows)
+
+eval $(ssh-agent - s)
+ssh-add ~/.ssh/id_rsa
+Comprobar proceso y agregarlo (Mac)
+
+eval "$(ssh-agent -s)"
+¿Usas macOS Sierra 10.12.2 o superior?
+Haz lo siguiente:
+
+cd ~/.ssh
+Crea un archivo config…
+Con Vim vim config
+Con VSCode code config
+Pega la siguiente configuración en el archivo
+
+#Agregar los comandos para crear TAGs
+git tag
+git log --all --graph --decorate --oneline
+alias Resumen="git log --all --graph --decorate --oneline"
+git tag -a prueba -m "prueba de creacion de tags" 77fbbd8
+git push origin --tags
+git tag -d Nombre_tag
+git push origin :refs/tags/v0.2
+
+
+#Manejo de Branches
+git show-branch
+
+gitk
+git checkout cabecera
+git push origin cabecera 
+
+
+scape + shift +zz
+
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+
+
+git add -A # Para hacer uso de amend los archivos deben de estar en staging
+git commit --amend # Remendar último commit
+
+git reflog
+git checkout Puedes moverte sin realizar ningún cambio al commit exacto de la ref
+
+git reset: Hará que el último commit sea el pasado por la ref, usar este comando sólo si sabes exactamente qué estás haciendo
+git merge: Puedes hacer merge de un commit en específico, funciona igual que con una branch, pero te hace el merge del estado específico del commit mandado
+
+git checkout master
+git merge eff544f # Fusionará en un nuevo commit la historia de master con el momento específico en el que vive
+git reset --soft HashDelHEAD te mantiene lo que tengas en staging ahí.
+git reset --hard HashDelHEAD resetea absolutamente todo incluyendo lo que tengas en staging.
+
+git grep color -->use la palabra color
+git grep la --> donde use la palabra la
+git grep -n color–> en que lineas use la palabra color
+git grep -n platzi --> en que lineas use la palabra platzi
+git grep -c la --> cuantas veces use la palabra la
+git grep -c paltzi --> cuantas veces use la palabra platzi
+git grep -c “<p>”–> cuantas veces use la etiqueta <p>
+git log-S “cabecera” --> cuantas veces use la palabra cabecera en
+todos los commits.
+grep–> para los archivos
+log --> para los commits.
+
+git shortlog -sn = muestra cuantos commit han hecho cada miembros del equipo.
+git shortlog -sn --all = muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+git shortlog -sn --all --no-merge = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+git blame ARCHIVO = muestra quien hizo cada cosa linea por linea
+git COMANDO --help = muestra como funciona el comando.
+git blame ARCHIVO -Llinea_inicial,linea_final= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+**git branch -r **= se muestran todas las ramas remotas
+git branch -a = se muestran todas las ramas tanto locales como remotas

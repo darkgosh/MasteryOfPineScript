@@ -1,0 +1,15 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 05 February, 2023
+//@version=5
+// Use the indicator Function
+indicator(title="Eg. Indicator Function class5", // Original Tittle
+          shorttitle = "IFC5", //short tittle use to make short del original tittle
+          overlay=false, // revisar video 5 de basic of pine script
+          precision=3, // set the numeber of decimal from the Decimal Data
+          scale=scale.left,// move de scale metric to the left side of the screen  
+          timeframe="D") // to set only show the data when the time frame its only a day, not work when the time fram its diferent that a "day"
+plot(close)
+
+//strategy.close(id= "buy")

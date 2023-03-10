@@ -1,0 +1,32 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 05 February, 2023
+//@version=5
+// Use the Alerts
+indicator("Eg. Use the Alerts Class 11")
+
+//Get alerts
+hc = close > high[1]
+lc = close < low[1]
+//rsi = ta.rsi(close,14)
+
+//Use the alert() function
+if hc
+    alert(message = "This bar closed higher than previous bar: " + str.tostring(close),
+          freq = alert.freq_once_per_bar_close)// esta es uan forma de declarar el mensaje y la frecuencia
+if lc
+    alert("This bar closed Lower than previous bar: " + str.tostring(close),
+          alert.freq_once_per_bar_close)// Aqui retire las funciones message y freq, ya que PS las interpreta de todos modos
+
+
+//Use the alertcondition() function
+alertcondition(hc,"Higher Close Alert", 
+               "This bar close higher than the previous bar: {{close}} on {{ticker}}") 
+            // la funsion alertcondition() no acepta parametros que se sean variables como el precio de mercado
+alertcondition(lc,"Lower Close Alert", 
+               "This bar close Lower than the previous bar: {{close}} on {{ticker}}") 
+alertcondition(hc or lc,"HC/LC Alert", 
+               "This bar close higher or Lower than the previous bar: {{close}} on {{ticker}}") 
+
+plot(close)

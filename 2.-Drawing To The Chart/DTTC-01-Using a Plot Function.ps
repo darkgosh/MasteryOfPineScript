@@ -1,0 +1,11 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 07 February, 2023
+//@version=5
+indicator("Plotting Data")
+
+//plot(close, title = "Our Plot", color = color.purple,linewidth = 5, style = plot.style_histogram, 
+     //trackprice = true, histbase =1.17)
+plot(open, title = "Our Plot", color = color.new(color.purple,45),linewidth = 5, style = plot.style_cross, 
+     join = true, editable = true, show_last = 10)

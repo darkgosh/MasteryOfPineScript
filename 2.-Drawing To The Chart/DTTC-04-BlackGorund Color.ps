@@ -1,0 +1,13 @@
+/// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 12 February, 2023
+//@version=5
+
+//Overlay hace que el plot se vaya directo al grafico 
+indicator("BlackGorund Color", overlay = true)
+
+inside =  high < high[1]and low > low [1]
+//la formula Is x true ? a:b //Quiere decir que si X es verdadero has 'a' sino has 'b' 
+bgcolor(inside ? color.new(color.blue, 50) : na, offset = 10, show_last = 50, title = "titulo por definir") 
+

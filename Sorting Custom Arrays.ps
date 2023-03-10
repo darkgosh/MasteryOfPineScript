@@ -1,0 +1,61 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © ZenAndTheArtOfTrading / PineScriptMastery.com
+// @version=5
+indicator("www.PineScriptMastery.com", overlay=true)
+
+// Get tickers
+string ticker1 = input.symbol(title="Ticker #1", defval="OANDA:EURUSD")
+string ticker2 = input.symbol(title="Ticker #2", defval="OANDA:USDJPY")
+string ticker3 = input.symbol(title="Ticker #3", defval="OANDA:NZDUSD")
+string ticker4 = input.symbol(title="Ticker #4", defval="OANDA:GBPUSD")
+string ticker5 = input.symbol(title="Ticker #5", defval="OANDA:XAUUSD")
+
+// Define custom type that stores both the EMA value and the ticker ID
+type EMA_Sorted
+    float emaValue
+    string ticker
+
+// Declare custom array
+var array<EMA_Sorted> emaArray = array.new<EMA_Sorted>(5)
+
+// Get EMA values
+ema1 = request.security(ticker1, "D", ta.ema(close, 50))
+ema2 = request.security(ticker2, "D", ta.ema(close, 50))
+ema3 = request.security(ticker3, "D", ta.ema(close, 50))
+ema4 = request.security(ticker4, "D", ta.ema(close, 50))
+ema5 = request.security(ticker5, "D", ta.ema(close, 50))
+
+// Draw EMAs
+plot(ema1, title="Ticker #1", color=color.orange)
+plot(ema2, title="Ticker #2", color=color.red)
+plot(ema3, title="Ticker #3", color=color.green)
+plot(ema4, title="Ticker #4", color=color.white)
+plot(ema5, title="Ticker #5", color=color.purple)
+
+// Set array values
+emaArray.set(0, EMA_Sorted.new(ema1, ticker1))
+emaArray.set(1, EMA_Sorted.new(ema2, ticker2))
+emaArray.set(2, EMA_Sorted.new(ema3, ticker3))
+emaArray.set(3, EMA_Sorted.new(ema4, ticker4))
+emaArray.set(4, EMA_Sorted.new(ema5, ticker5))
+
+// Define custom array sorting method
+method sortCustomArray(array<EMA_Sorted> srcArray, bool ascending = true) =>
+    for i = 0 to srcArray.size() - 2
+        for j = i + 1 to srcArray.size() - 1
+            if (ascending and srcArray.get(i).emaValue > srcArray.get(j).emaValue) or 
+             (not ascending and srcArray.get(i).emaValue < srcArray.get(j).emaValue)
+                EMA_Sorted temp = srcArray.get(i)
+                srcArray.set(i, srcArray.get(j))
+                srcArray.set(j, temp)
+
+// Sort EMA array
+emaArray.sortCustomArray()
+
+// Draw label
+if barstate.islast
+    string arrayText = ""
+    for i = 0 to emaArray.size() - 1
+        arrayText := arrayText + emaArray.get(i).ticker + "=" + str.tostring(emaArray.get(i).emaValue, "####.####") + 
+         (i == emaArray.size() - 1 ? "" : "\n")
+    label arrayLabel = label.new(bar_index, high + syminfo.mintick * 250, arrayText, color=color.black, textcolor=color.white)

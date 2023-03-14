@@ -1,11 +1,16 @@
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © darkgosh
 //Create by Renato Vidana
-//Last Update: 10 March, 2023
+//Last Update: 13 March, 2023
 //@version=5
-//DTTC-06-BarsandCandles
-indicator("Custom bars And Candles")
+//DTTC-05-BarsandCandles
+indicator("Custom basr And Candles")
 
+//variable "c" es igual "=" cierre de la vela "close" es Mayor que ">" a la apertura de la vela "open", 
+//en ese caso "?" pinta vela en verde "color.green" de lo contrario ":" pinta la vela en rojo "color.red"
 c= close > open ? color.green: color.red
 
-plotcandle(open, high, low, close, color=c, title="Candle", wickcolor = c, bordercolor=color.aqua)
+plotcandle(open, high, low, close, color=c) //c toma el color de acuerdo a la condicion 
+plotcandle(open, high, low, close, color=c, title="Candle")//inserta un subtitulo a la funsion plotcandle
+plotcandle(open, high, low, close, color=c, title="Candle", wickcolor = color.purple)// cambia el color de la mecha de la vela
+plotcandle(open, high, low, close, color=c, title="Candle", wickcolor = c, bordercolor=color.aqua)//Cambia el color del contorno de la vela

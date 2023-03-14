@@ -1,0 +1,15 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 13 March, 2023
+//@version=5
+//DTTC-09-PlotArrow
+indicator("DTTC-09-PlotArrow", overlay=true)
+
+
+//plotarrow(low - high, title = "arrow", colorup = color.white)
+//plotarrow(low - high, title = "arrow", colordown = color.aqua)
+//plotarrow(high - low)
+//plotarrow(open - close, title = "Arrow", offset = 1)
+plotarrow(open - close, title = "Arrow", minheight = 1,maxheight = 100)
+//plotarrow(open - close, title = "Arrow", offset = 1, display =display.none)

@@ -1,0 +1,26 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 13 March, 2023
+//@version=5
+//DTTC-10 Lines
+indicator("DTTC-10 Lines", overlay = true)
+
+myline = line.new(
+                  x1 = bar_index[10],
+                  y1 = low[10],
+                  x2 = bar_index,
+                  y2 = high, 
+                  xloc=xloc.bar_index,
+                  extend=extend.both, //extiende de forma indefinida a la derecha
+                  color=color.fuchsia,
+                  style=line.style_dashed,
+                  width=5
+                  )//funsion line.new toma 4 cordenadas, 
+// es necesario borra las lineas sino llena todo el chart 
+
+line.delete(myline[1])// este codigo borra la lina anterior
+
+line.set_style(myline, close > open? line.style_dashed : line.style_solid)
+
+plot(na)

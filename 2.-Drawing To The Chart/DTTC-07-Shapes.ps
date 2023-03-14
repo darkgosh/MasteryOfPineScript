@@ -1,23 +1,23 @@
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © darkgosh
 //Create by Renato Vidana
-//Last Update: 12 February, 2023
+//Last Update: 13 march, 2023
 //@version=5
-
+//DTTC-07-PlotShape
 indicator("PSMC - Shapes", overlay = true)
-higherClose = close > high[1]//creacion de Variable 
-lowerClose = close < low[1]
+higherClose = close > high[1]//el precio de cierre de la vela "close" es mayor que ">" a la vela previa del ultimo precio maximo "high[1]"
+lowerClose = close < low[1]//el precio de cierre de la vela "close" es menor que "<" a la vela previa del precio ultimo precio mas bajo de la vela "low[1]"
 
 plotshape(
   higherClose,
-  title = "Higher Close" ,//Titulo dentro de la configuracion del indicador
+  title = "Higher Close" ,//Subitulo dentro de la configuracion (gear) del indicador
   color = color.green,//Define el color
   style = shape.triangleup, //Tipo de icono que va mostrar
   location = location.belowbar, // ubicacion de la vela
   text= "HC", //Escribir Texto en la vela
   textcolor= color.white, //Color del texto de la vela
-  editable = true, // Permite o Niega editar parametros entrando en el gear de la configuracion del indicador
-  size = size.small  // Permite cambiar el tamaño del icono, por defaul esta en size.auto, este se ajusta segun la temporalidad
+  editable = true, //Permite o Niega editar parametros entrando en el gear de la configuracion del indicador
+  size = size.small  //Permite cambiar el tamaño del icono, por defaul esta en size.auto, este se ajusta segun la temporalidad
   )
 
 plotshape(
@@ -26,6 +26,6 @@ plotshape(
   color = color.red,
   style = shape.triangledown,
   text = "LC",
-  textcolor = color.purple, editable = true
+  textcolor = color.purple, 
+  editable = true
   )
-

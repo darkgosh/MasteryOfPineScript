@@ -1,0 +1,13 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © darkgosh
+//Create by Renato Vidana
+//Last Update: 13 March, 2023
+//@version=5
+//DTTC-08-PlotCharacter
+indicator("DTTC-08-PlotCharacter", overlay =true)
+
+plotchar(barstate.islast, 
+     char = "⌛",//permite insertar en la vela letras o emoticons 
+     location=location.top, //coloca el char en el top dela vela
+     text="CHAR",//agrega texto en la vela
+     textcolor=color.white )//agrega color al texto 

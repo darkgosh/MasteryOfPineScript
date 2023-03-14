@@ -9,3 +9,7 @@ indicator("DTTC-05-BarColor")
 inside = high < high[1] and low > low[1]
 
 barcolor(inside ? color.purple : na)
+barcolor(inside ? color.rgb(148, 155, 153) :na, offset=1)//va pintar de gris la vela siguiente
+barcolor(inside ? color.yellow : na, editable = true)//permite editar en el gear
+barcolor(inside ? color.blue : na, show_last = 10)// va mostrar las ultimas velas partiendo de la vela actual hacia atras.
+barcolor(inside ? color.blue : na, show_last = 10, title = "Inside Bar")// Inserta subtitulo dentro config en Gear
